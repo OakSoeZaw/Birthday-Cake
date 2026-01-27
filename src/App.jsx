@@ -1,9 +1,12 @@
-import './App.css'
+import "./App.css";
+import HeroSection from "./components/HeroSection";
 
 function App() {
   return (
-    <h1>Hello World</h1>
-  )
+    <div>
+      <HeroSection />
+    </div>
+  );
 }
 
-export default App
+export default App;
