@@ -1,0 +1,9 @@
+function HeroSection( {userName = "Alex", triggerConfetti}){
+
+    const BIRTHDAY_PERSON = "Isaac Chong"
+    return(
+        <div>
+
+        </div>
+    )
+}
