@@ -1,0 +1,361 @@
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff6b6b, #ffd166, #06d6a0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+}
+
+.birthday-header {
+  margin-bottom: 2rem;
+}
+
+.birthday-title {
+  font-size: 3.5rem;
+  color: #ff6b6b;
+  margin-bottom: 1.5rem;
+  text-shadow: 3px 3px 0 rgba(255, 215, 0, 0.3);
+  animation: title-glow 2s infinite alternate;
+}
+
+@keyframes title-glow {
+  from {
+    text-shadow: 3px 3px 0 rgba(255, 215, 0, 0.3);
+  }
+  to {
+    text-shadow: 3px 3px 20px rgba(255, 215, 0, 0.6);
+  }
+}
+
+.highlight-name {
+  color: #06d6a0;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: #ffd166;
+}
+
+.name-edit-container {
+  margin: 1.5rem 0;
+}
+
+.name-form {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.name-input {
+  padding: 0.75rem 1.5rem;
+  border: 3px solid #ffd166;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  width: 300px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.name-input:focus {
+  border-color: #06d6a0;
+  box-shadow: 0 0 0 3px rgba(6, 214, 160, 0.3);
+}
+
+.save-btn, .cancel-btn, .edit-name-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.save-btn {
+  background: #06d6a0;
+  color: white;
+}
+
+.save-btn:hover {
+  background: #04b486;
+  transform: translateY(-2px);
+}
+
+.cancel-btn {
+  background: #ffd166;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background: #ffc233;
+  transform: translateY(-2px);
+}
+
+.name-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.current-name {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.edit-name-btn {
+  background: rgba(255, 107, 107, 0.1);
+  color: #ff6b6b;
+  border: 2px solid #ff6b6b;
+}
+
+.edit-name-btn:hover {
+  background: #ff6b6b;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.birthday-subtitle {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-message {
+  margin: 2rem 0;
+}
+
+.message-bubble {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 20px;
+  border: 3px dashed #ffd166;
+  position: relative;
+}
+
+.wish-text {
+  font-size: 1.3rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.decoration {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.emoji {
+  font-size: 2rem;
+  animation: float 3s infinite ease-in-out;
+}
+
+.emoji:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.emoji:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.celebration-controls {
+  margin: 3rem 0;
+}
+
+.celebrate-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  color: white;
+  border: none;
+  padding: 1.5rem 3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+}
+
+.celebrate-btn:hover:not(:disabled) {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
+}
+
+.celebrate-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.celebrate-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-icon {
+  font-size: 2rem;
+}
+
+.celebration-hint {
+  margin-top: 1rem;
+  color: #666;
+  font-style: italic;
+}
+
+.animated-elements {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 3rem 0;
+  font-size: 3rem;
+}
+
+.floating-balloon, .floating-cake, .floating-gift {
+  animation: float-slow 4s infinite ease-in-out;
+}
+
+.floating-balloon {
+  animation-delay: 0s;
+  color: #ff6b6b;
+}
+
+.floating-cake {
+  animation-delay: 0.5s;
+  color: #ffd166;
+}
+
+.floating-gift {
+  animation-delay: 1s;
+  color: #06d6a0;
+}
+
+.bounce {
+  animation: bounce 0.5s ease infinite alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+  66% {
+    transform: translateY(-5px) rotate(-5deg);
+  }
+}
+
+.birthday-stats {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid #eee;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff6b6b;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 1rem;
+  }
+  
+  .hero-content {
+    padding: 2rem 1.5rem;
+  }
+  
+  .birthday-title {
+    font-size: 2.5rem;
+  }
+  
+  .name-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .name-input {
+    width: 100%;
+  }
+  
+  .celebrate-btn {
+    padding: 1.2rem 2rem;
+    font-size: 1.2rem;
+  }
+  
+  .birthday-stats {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .animated-elements {
+    gap: 1.5rem;
+    font-size: 2.5rem;
+  }
+}

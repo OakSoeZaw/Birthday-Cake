@@ -1,5 +1,6 @@
 import Confetti from "react-confetti";
 import birthdaySong from "../assets/birthday-song.mp3";
+import '../styles/HeroSection.css'
 import { useState, useEffect } from "react";
 
 function HeroSection({ userName = "Oak", triggerConfetti }) {
@@ -82,6 +83,18 @@ function HeroSection({ userName = "Oak", triggerConfetti }) {
             <span className="btn-icon">🎂</span>
           </button>
         </div>
+        <div className="animated-elements">
+          <div className={`floating-balloon ${isAnimating ? "bounce" : ""}`}>
+            🎈
+          </div>
+          <div className={`floating-cake ${isAnimating ? "bounce" : ""}`}>
+            🎂
+          </div>
+          <div className={`floating-gift ${isAnimating ? "bounce" : ""}`}>
+            🎁
+          </div>
+        </div>
+
       </div>
     </section>
   );
