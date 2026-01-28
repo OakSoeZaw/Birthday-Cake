@@ -51,7 +51,7 @@ function HeroSection({ userName = "Oak", triggerConfetti }) {
           </h1>
           <div className="birthday-info">
             <p className="birthday-date">Celebrating on: January 28th </p>
-            <p className="birthday-age">Turning 21 today!</p>
+            <p className="birthday-age">Turning 22 today!</p>
           </div>
         </div>
         <p className="birthday-subtitle">
