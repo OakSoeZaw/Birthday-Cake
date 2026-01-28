@@ -3,7 +3,7 @@ import birthdaySong from "../assets/birthday-song.mp3";
 import '../styles/HeroSection.css'
 import { useState, useEffect } from "react";
 
-function HeroSection({ userName = "Oak", triggerConfetti }) {
+function HeroSection({ userName , triggerConfetti }) {
   const [isAnimating, setIsAnimating] = useState(false);
   const [audio] = useState(new Audio(birthdaySong));
   const BIRTHDAY_PERSON = "Isaac Chong";

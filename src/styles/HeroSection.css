@@ -1,12 +1,12 @@
 .hero-section {
   min-height: 100vh;
-  background: linear-gradient(135deg, #ff6b6b, #ffd166, #06d6a0);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 8rem 2rem 4rem;
   position: relative;
-  overflow: hidden;
+  background: transparent;
+  box-sizing: border-box;
 }
 
 .confetti-container {
@@ -16,175 +16,142 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 1;
+  z-index: 1000;
 }
 
 .hero-content {
+  max-width: 900px;
+  width: 100%;
   text-align: center;
-  max-width: 800px;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 3rem;
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border-radius: 40px;
+  padding: 3rem 2.5rem;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.4) inset;
   position: relative;
-  z-index: 2;
-  backdrop-filter: blur(10px);
+  animation: fadeInUp 0.8s ease-out;
+  box-sizing: border-box;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .birthday-header {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  padding-top: 0.5rem;
 }
 
 .birthday-title {
   font-size: 3.5rem;
-  color: #ff6b6b;
-  margin-bottom: 1.5rem;
-  text-shadow: 3px 3px 0 rgba(255, 215, 0, 0.3);
-  animation: title-glow 2s infinite alternate;
-}
-
-@keyframes title-glow {
-  from {
-    text-shadow: 3px 3px 0 rgba(255, 215, 0, 0.3);
-  }
-  to {
-    text-shadow: 3px 3px 20px rgba(255, 215, 0, 0.6);
-  }
+  font-weight: 800;
+  color: #2d2d2d;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  padding: 0;
 }
 
 .highlight-name {
-  color: #06d6a0;
-  font-weight: bold;
-  text-decoration: underline;
-  text-decoration-color: #ffd166;
+  background: linear-gradient(135deg, #ff6b9d, #c06fef, #4facfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  display: inline-block;
+  animation: shimmer 3s ease-in-out infinite;
 }
 
-.name-edit-container {
-  margin: 1.5rem 0;
+@keyframes shimmer {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
 }
 
-.name-form {
+.birthday-info {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
-.name-input {
-  padding: 0.75rem 1.5rem;
-  border: 3px solid #ffd166;
-  border-radius: 50px;
+.birthday-date,
+.birthday-age {
   font-size: 1.1rem;
-  width: 300px;
-  outline: none;
-  transition: all 0.3s ease;
-}
-
-.name-input:focus {
-  border-color: #06d6a0;
-  box-shadow: 0 0 0 3px rgba(6, 214, 160, 0.3);
-}
-
-.save-btn, .cancel-btn, .edit-name-btn {
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.save-btn {
-  background: #06d6a0;
-  color: white;
-}
-
-.save-btn:hover {
-  background: #04b486;
-  transform: translateY(-2px);
-}
-
-.cancel-btn {
-  background: #ffd166;
-  color: #333;
-}
-
-.cancel-btn:hover {
-  background: #ffc233;
-  transform: translateY(-2px);
-}
-
-.name-display {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.current-name {
-  font-size: 1.5rem;
-  color: #333;
   font-weight: 600;
-}
-
-.edit-name-btn {
-  background: rgba(255, 107, 107, 0.1);
-  color: #ff6b6b;
-  border: 2px solid #ff6b6b;
-}
-
-.edit-name-btn:hover {
-  background: #ff6b6b;
-  color: white;
-  transform: translateY(-2px);
+  color: #555;
+  padding: 0.5rem 1.5rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .birthday-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #666;
   margin-bottom: 2rem;
+  font-weight: 400;
   line-height: 1.6;
 }
 
 .hero-message {
-  margin: 2rem 0;
+  margin: 2.5rem 0;
 }
 
 .message-bubble {
-  background: #f8f9fa;
-  padding: 2rem;
-  border-radius: 20px;
-  border: 3px dashed #ffd166;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 245, 235, 0.9));
+  border-radius: 25px;
+  padding: 2rem 2.5rem;
+  box-shadow: 
+    0 10px 30px rgba(255, 107, 157, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.5) inset;
   position: relative;
 }
 
 .wish-text {
-  font-size: 1.3rem;
-  color: #333;
-  line-height: 1.8;
+  font-size: 1.25rem;
+  color: #444;
   margin-bottom: 1rem;
+  font-style: italic;
+  line-height: 1.7;
 }
 
 .decoration {
   display: flex;
-  justify-content: center;
   gap: 1rem;
-  margin-top: 1rem;
+  justify-content: center;
+  font-size: 1.5rem;
 }
 
 .emoji {
-  font-size: 2rem;
-  animation: float 3s infinite ease-in-out;
+  display: inline-block;
+  animation: float 2s ease-in-out infinite;
+}
+
+.emoji:nth-child(1) {
+  animation-delay: 0s;
 }
 
 .emoji:nth-child(2) {
-  animation-delay: 0.5s;
+  animation-delay: 0.3s;
 }
 
 .emoji:nth-child(3) {
-  animation-delay: 1s;
+  animation-delay: 0.6s;
 }
 
 @keyframes float {
@@ -197,165 +164,175 @@
 }
 
 .celebration-controls {
-  margin: 3rem 0;
+  margin-top: 2.5rem;
 }
 
 .celebrate-btn {
-  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
-  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 1.2rem 3rem;
   border: none;
-  padding: 1.5rem 3rem;
-  font-size: 1.5rem;
-  font-weight: bold;
   border-radius: 50px;
+  background: linear-gradient(135deg, #ff6b9d, #ffa07a);
+  color: white;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
+  box-shadow: 
+    0 10px 30px rgba(255, 107, 157, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.3) inset;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+  position: relative;
+  overflow: hidden;
 }
 
-.celebrate-btn:hover:not(:disabled) {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
+.celebrate-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.celebrate-btn:hover::before {
+  left: 100%;
+}
+
+.celebrate-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 15px 40px rgba(255, 107, 157, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.4) inset;
+}
+
+.celebrate-btn:active {
+  transform: translateY(-1px);
 }
 
 .celebrate-btn:disabled {
   opacity: 0.7;
   cursor: not-allowed;
-}
-
-.celebrate-btn:active:not(:disabled) {
-  transform: translateY(0);
+  transform: none;
 }
 
 .btn-icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  display: inline-block;
+  animation: pulse 1s ease-in-out infinite;
 }
 
-.celebration-hint {
-  margin-top: 1rem;
-  color: #666;
-  font-style: italic;
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.btn-text {
+  font-size: 1.2rem;
 }
 
 .animated-elements {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  margin: 3rem 0;
-  font-size: 3rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
 }
 
-.floating-balloon, .floating-cake, .floating-gift {
-  animation: float-slow 4s infinite ease-in-out;
+.floating-balloon,
+.floating-cake,
+.floating-gift {
+  position: absolute;
+  font-size: 3rem;
+  animation: floatSlow 4s ease-in-out infinite;
 }
 
 .floating-balloon {
+  top: 10%;
+  left: 5%;
   animation-delay: 0s;
-  color: #ff6b6b;
 }
 
 .floating-cake {
-  animation-delay: 0.5s;
-  color: #ffd166;
+  top: 15%;
+  right: 8%;
+  animation-delay: 1s;
 }
 
 .floating-gift {
-  animation-delay: 1s;
-  color: #06d6a0;
+  bottom: 15%;
+  left: 8%;
+  animation-delay: 2s;
 }
 
-.bounce {
-  animation: bounce 0.5s ease infinite alternate;
-}
-
-@keyframes bounce {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes float-slow {
+@keyframes floatSlow {
   0%, 100% {
     transform: translateY(0) rotate(0deg);
   }
-  33% {
-    transform: translateY(-15px) rotate(5deg);
-  }
-  66% {
-    transform: translateY(-5px) rotate(-5deg);
+  50% {
+    transform: translateY(-20px) rotate(5deg);
   }
 }
 
-.birthday-stats {
-  display: flex;
-  justify-content: center;
-  gap: 4rem;
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 2px solid #eee;
+.bounce {
+  animation: bounce 0.5s ease-in-out infinite !important;
 }
 
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #ff6b6b;
-  margin-bottom: 0.5rem;
-}
-
-.stat-label {
-  color: #666;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-section {
-    padding: 1rem;
+    padding: 4rem 1.5rem 3rem;
   }
-  
+
   .hero-content {
     padding: 2rem 1.5rem;
+    border-radius: 30px;
+    margin-top: 1rem;
   }
-  
+
   .birthday-title {
     font-size: 2.5rem;
   }
-  
-  .name-form {
+
+  .birthday-info {
     flex-direction: column;
-    align-items: stretch;
+    gap: 1rem;
   }
-  
-  .name-input {
-    width: 100%;
+
+  .birthday-subtitle {
+    font-size: 1.1rem;
   }
-  
+
+  .wish-text {
+    font-size: 1.1rem;
+  }
+
   .celebrate-btn {
-    padding: 1.2rem 2rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
   }
-  
-  .birthday-stats {
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  .animated-elements {
-    gap: 1.5rem;
-    font-size: 2.5rem;
+
+  .floating-balloon,
+  .floating-cake,
+  .floating-gift {
+    font-size: 2rem;
   }
 }
