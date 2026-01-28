@@ -10,7 +10,7 @@
 }
 
 .simple-cake h2 {
-  color: #ff6b6b;
+  color: #8B4513;
   margin-bottom: 2rem;
   font-size: 2rem;
 }
@@ -33,7 +33,7 @@
 .cake-layer.bottom {
   width: 250px;
   height: 80px;
-  background: #ffb7c5;
+  background: #8B4513;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -42,7 +42,7 @@
 .cake-layer.middle {
   width: 200px;
   height: 60px;
-  background: #ff99ac;
+  background: #A0522D;
   bottom: 80px;
   left: 50%;
   transform: translateX(-50%);
@@ -51,7 +51,7 @@
 .cake-layer.top {
   width: 150px;
   height: 40px;
-  background: #ff6b6b;
+  background: #D2691E;
   bottom: 140px;
   left: 50%;
   transform: translateX(-50%);
@@ -62,7 +62,7 @@
   position: absolute;
   width: 170px;
   height: 30px;
-  background: #ffd1dc;
+  background: #D2B48C;
   border-radius: 50% 50% 10px 10px;
   bottom: 180px;
   left: 50%;
@@ -74,7 +74,7 @@
   position: absolute;
   width: 15px;
   height: 20px;
-  background: #ffd1dc;
+  background: #D2B48C;
   border-radius: 0 0 10px 10px;
   bottom: 100%;
 }
@@ -117,7 +117,7 @@
 .candle {
   width: 10px;
   height: 40px;
-  background: linear-gradient(to top, #ff6b6b, #4ecdc4, #ffd166);
+  background: linear-gradient(to top, #FFD700, #C0C0C0, #FFD700);
   border-radius: 5px 5px 0 0;
   margin: 0 auto;
   position: relative;
@@ -152,11 +152,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  background: linear-gradient(135deg, #8B4513, #A0522D);
   color: white;
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 20px 40px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 20px 40px rgba(139, 69, 19, 0.3);
   z-index: 100;
   animation: popup 0.5s ease-out;
 }
@@ -204,12 +204,12 @@
 }
 
 .blow-btn {
-  background: linear-gradient(135deg, #4ecdc4, #06d6a0);
+  background: linear-gradient(135deg, #8B4513, #A0522D);
   color: white;
 }
 
 .reset-btn {
-  background: linear-gradient(135deg, #ffd166, #ffb347);
+  background: linear-gradient(135deg, #D2B48C, #F5DEB3);
   color: #333;
 }
 

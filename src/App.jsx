@@ -1,14 +1,35 @@
 import "./App.css";
+import { useState } from "react";
 import HeroSection from "./components/HeroSection";
 import CakeWithCandles from "./components/CakeWithCandles";
 
 function App() {
+  const [birthdayPerson] = useState("Isaac");
+  const [birthdayAge] = useState(22);
+  const [showConfetti, setShowConfetti] = useState(false);
 
-  const [birthdayPerson] = useState('Isaac')
+  const handleTriggerConfetti = () => {
+    setShowConfetti(true);
+    setTimeout(() => setShowConfetti(false), 5000);
+  };
+
+  const handleAllCandlesBlown = () => {
+    console.log("All candles blown! Making a wish!");
+    alert(
+      `🎉 ${birthdayPerson} made a wish on their ${birthdayAge}th birthday!`,
+    );
+  };
   return (
-    <div>
-      <HeroSection />
-      <CakeWithCandles />
+    <div className="App">
+      <HeroSection
+        userName={birthdayPerson}
+        triggerConfetti={handleTriggerConfetti}
+      />
+      <CakeWithCandles
+        age={birthdayAge}
+        name={birthdayPerson}
+        onAllCandlesBlown={handleAllCandlesBlown}
+      />
     </div>
   );
 }
