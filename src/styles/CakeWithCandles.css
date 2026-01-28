@@ -1,0 +1,307 @@
+/* Simple Cake with Candles CSS */
+.simple-cake {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #fff9f9, #fff0f5);
+  border-radius: 20px;
+  margin: 2rem auto;
+  max-width: 600px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.simple-cake h2 {
+  color: #ff6b6b;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+/* Cake Container */
+.cake {
+  position: relative;
+  height: 250px;
+  margin: 0 auto 3rem;
+  width: 300px;
+}
+
+/* Cake Layers */
+.cake-layer {
+  position: absolute;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cake-layer.bottom {
+  width: 250px;
+  height: 80px;
+  background: #ffb7c5;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cake-layer.middle {
+  width: 200px;
+  height: 60px;
+  background: #ff99ac;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cake-layer.top {
+  width: 150px;
+  height: 40px;
+  background: #ff6b6b;
+  bottom: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Frosting */
+.frosting {
+  position: absolute;
+  width: 170px;
+  height: 30px;
+  background: #ffd1dc;
+  border-radius: 50% 50% 10px 10px;
+  bottom: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.frosting-drip {
+  position: absolute;
+  width: 15px;
+  height: 20px;
+  background: #ffd1dc;
+  border-radius: 0 0 10px 10px;
+  bottom: 100%;
+}
+
+.frosting-drip:nth-child(1) {
+  left: 20%;
+}
+
+.frosting-drip:nth-child(2) {
+  left: 50%;
+  transform: translateX(-50%);
+  height: 25px;
+}
+
+.frosting-drip:nth-child(3) {
+  right: 20%;
+}
+
+/* Candles */
+.candles {
+  position: absolute;
+  bottom: 190px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.candle-container {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.candle-container:hover {
+  transform: translateY(-5px);
+}
+
+.candle {
+  width: 10px;
+  height: 40px;
+  background: linear-gradient(to top, #ff6b6b, #4ecdc4, #ffd166);
+  border-radius: 5px 5px 0 0;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.flame {
+  width: 15px;
+  height: 25px;
+  background: linear-gradient(to top, #ff8c00, #ffd700);
+  border-radius: 50% 50% 20% 20%;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: flicker 0.5s infinite alternate;
+  filter: blur(1px);
+}
+
+@keyframes flicker {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.1);
+  }
+}
+
+/* Wish Popup */
+.wish-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(255, 107, 107, 0.3);
+  z-index: 100;
+  animation: popup 0.5s ease-out;
+}
+
+@keyframes popup {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.wish-popup h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.wish-popup p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.blow-btn {
+  background: linear-gradient(135deg, #4ecdc4, #06d6a0);
+  color: white;
+}
+
+.reset-btn {
+  background: linear-gradient(135deg, #ffd166, #ffb347);
+  color: #333;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Counter */
+.counter {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.counter p {
+  background: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  display: inline-block;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Instructions */
+.instructions {
+  color: #888;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .simple-cake {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  .simple-cake h2 {
+    font-size: 1.5rem;
+  }
+  
+  .cake {
+    width: 250px;
+    height: 200px;
+  }
+  
+  .cake-layer.bottom {
+    width: 200px;
+    height: 60px;
+  }
+  
+  .cake-layer.middle {
+    width: 160px;
+    height: 50px;
+    bottom: 60px;
+  }
+  
+  .cake-layer.top {
+    width: 120px;
+    height: 30px;
+    bottom: 110px;
+  }
+  
+  .frosting {
+    width: 140px;
+    height: 25px;
+    bottom: 140px;
+  }
+  
+  .candles {
+    width: 120px;
+    bottom: 150px;
+  }
+  
+  .candle {
+    width: 8px;
+    height: 30px;
+  }
+  
+  .flame {
+    width: 12px;
+    height: 20px;
+    top: -25px;
+  }
+  
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 200px;
+    justify-content: center;
+  }
+}
