@@ -1,12 +1,12 @@
 import Confetti from "react-confetti";
 import birthdaySong from "../assets/birthday-song.mp3";
-import '../styles/HeroSection.css'
+import "../styles/HeroSection.css";
 import { useState, useEffect } from "react";
 
-function HeroSection({ userName , triggerConfetti }) {
+function HeroSection({ userName, triggerConfetti }) {
   const [isAnimating, setIsAnimating] = useState(false);
   const [audio] = useState(new Audio(birthdaySong));
-  const BIRTHDAY_PERSON = "Rodisha";
+  const BIRTHDAY_PERSON = "Ro";
 
   useEffect(() => {
     return () => {
@@ -60,7 +60,7 @@ function HeroSection({ userName , triggerConfetti }) {
         <div className="hero-message">
           <div className="message-bubble">
             <p className="wish-text">
-             Thank you for always being there for me. Lots of love
+              Thank you for always being there for me. Lots of love
             </p>
             <div className="decoration">
               <span className="emoji">✨</span>
@@ -93,7 +93,6 @@ function HeroSection({ userName , triggerConfetti }) {
             🎁
           </div>
         </div>
-
       </div>
     </section>
   );
