@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/CakeWithCandles.css";
 
-function CakeWithCandles({ age = 22, name = "Isaac Chong" }) {
+function CakeWithCandles({ age = 21, name = "Rodisha" }) {
   const [candlesLit, setCandlesLit] = useState(Array(4).fill(true));
   const [showWishMessage, setShowWishMessage] = useState(false);
 
