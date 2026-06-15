@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 function HeroSection({ userName , triggerConfetti }) {
   const [isAnimating, setIsAnimating] = useState(false);
   const [audio] = useState(new Audio(birthdaySong));
-  const BIRTHDAY_PERSON = "Isaac Chong";
+  const BIRTHDAY_PERSON = "Rodisha";
 
   useEffect(() => {
     return () => {
@@ -50,8 +50,8 @@ function HeroSection({ userName , triggerConfetti }) {
             <span className="highlight-name">{BIRTHDAY_PERSON}</span>
           </h1>
           <div className="birthday-info">
-            <p className="birthday-date">Celebrating on: January 28th </p>
-            <p className="birthday-age">Turning 22 today!</p>
+            <p className="birthday-date">Celebrating on: June 15th </p>
+            <p className="birthday-age">Turning 21 today!</p>
           </div>
         </div>
         <p className="birthday-subtitle">
@@ -60,8 +60,7 @@ function HeroSection({ userName , triggerConfetti }) {
         <div className="hero-message">
           <div className="message-bubble">
             <p className="wish-text">
-              May all your dream come true ane this year bring you endless
-              reason to smile!
+             Thank you for always being there for me. Lots of love
             </p>
             <div className="decoration">
               <span className="emoji">✨</span>
