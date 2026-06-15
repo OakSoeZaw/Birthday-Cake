@@ -4,8 +4,8 @@ import HeroSection from "./components/HeroSection";
 import CakeWithCandles from "./components/CakeWithCandles";
 
 function App() {
-  const [birthdayPerson] = useState("Isaac");
-  const [birthdayAge] = useState(22);
+  const [birthdayPerson] = useState("Rodisha");
+  const [birthdayAge] = useState(21);
   const [showConfetti, setShowConfetti] = useState(false);
 
   const handleTriggerConfetti = () => {
