@@ -63,7 +63,7 @@ function CakeWithCandles({ age = 21, name = "Rodisha" }) {
         <div className="wish-popup">
           <h3>✨ Make a Wish! ✨</h3>
           <p>
-            Happy {age}th Birthday, {name}
+            Happy {age}st Birthday, {name}
           </p>
         </div>
       )}
